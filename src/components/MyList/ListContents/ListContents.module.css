@@ -1,0 +1,8 @@
+.ListContents{
+    height: 120px;
+    width: 200px;
+    background-color: thistle;
+    padding: 5px;
+    margin: 5px 5px 0px 5px;
+    text-align: center;
+}

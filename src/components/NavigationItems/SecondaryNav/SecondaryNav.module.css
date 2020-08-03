@@ -1,0 +1,22 @@
+.SecondaryNav{
+    margin: 0;
+    padding: 0;
+    
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    flex-flow: column;
+}
+@media(min-width: 500px){
+    .SecondaryNav{
+        flex-flow: row;
+    }
+}
+
+.Icons {
+    color: white;
+    padding: 0 20px;
+    size: 15px;
+}

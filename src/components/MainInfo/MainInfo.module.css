@@ -1,0 +1,47 @@
+.MainInfo{
+    height: 600px;
+    width: 100%;
+    /* background-color: #767676 ; */
+    margin: auto;
+    color: white;
+    background: linear-gradient(to right,black 10%,rgb(46, 43, 43));
+      overflow: scroll;  
+    /* background: url("../../assets/images/bellachao.jpg"); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* background-position: 700px ; */
+    
+}
+.ImgDiv{
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    align-items: center;
+    padding: 15% 0;
+}
+
+.SvgTag{
+    width: 30px;
+    height: 35px;
+    align-items: center;
+    stroke: white;
+    stroke-width: 5px;
+    padding: 5px 5px 0 40px;
+}
+
+.Topshow{
+    width: 250px;
+    height: 40px;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.paraDiv{
+    width: 500px;
+    height: auto;
+    padding: 5px 5px 0px 40px;
+    margin-top: 30px;
+    font-size: 20px;
+}

@@ -1,0 +1,24 @@
+.MyList{
+    width: 100%;
+    height: 175px;
+/* background-color: palegreen; */
+    /* padding: 5px 5px 5px 5px; */
+    margin: 0px 20px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    position: relative;
+    box-sizing: border-box;
+    /* overflow: scroll; */
+
+}
+.MyListDiv{
+    background: linear-gradient(
+        to right,
+        black 10%,
+        rgb(46, 43, 43)
+      );
+    margin: 0;
+    box-sizing: border-box;
+}

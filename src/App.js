@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
+import NetflixMain from './containers/NetflixMain/NetflixMain';
+import Layout from './hoc/Layout/Layout';
 
 function App() {
+
+  let routes = (
+    <Switch>
+      <Route path='/' exact component={NetflixMain} />
+      <Redirect to='/' />
+    </Switch>
+  )
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+    <div>
+      <Layout>
+        {routes}
+        
+      </Layout>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

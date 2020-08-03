@@ -1,0 +1,17 @@
+.NavIcon {
+    margin: 0;
+    padding: 0 15px;
+    box-sizing: content-box;
+    display: block;
+    /* width: 100%; */
+    color: white;
+}
+.NavIcon a{
+    color: #ffffff;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    font-size: 13px;
+}
