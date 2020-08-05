@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const navItems = (props) =>(
     <li className={classes.NavItem}>
         <Link activeClassName={classes.active} to={props.link} exact >{props.children}</Link>
+    {/* <Link to='/'>{props.children}</Link> */}
     </li>
 );
 

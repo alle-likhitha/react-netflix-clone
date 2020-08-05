@@ -3,15 +3,18 @@ import React from 'react';
 import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
 import NetflixMain from './containers/NetflixMain/NetflixMain';
 import Layout from './hoc/Layout/Layout';
-
+import TvShows from './containers/TvShows/TvShows'
 function App() {
 
   let routes = (
     <Switch>
+      <Route path='/tvshows' exact component={TvShows} />
       <Route path='/' exact component={NetflixMain} />
+      
       <Redirect to='/' />
     </Switch>
-  )
+  );
+  
   return (
     
     <div>

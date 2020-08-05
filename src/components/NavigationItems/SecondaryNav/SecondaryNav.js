@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import NavIcon from './NavIcon/NavIcon';
 import classes from './SecondaryNav.module.css';
 import {FaSearch} from 'react-icons/fa';
@@ -11,14 +11,18 @@ const SecondaryNav = (props) =>{
     return(
         <div className={classes.SecondaryNav}>
     
-            <FaSearch className={classes.Icons}/>
+            <Link className={classes.Link} to='/'><FaSearch className={classes.Icons}/></Link>
             
             <NavIcon>CHILDREN</NavIcon>
             <NavIcon>DVD</NavIcon>
-            <AiOutlineGift className={classes.Icons}/>
-            <FaBell className={classes.Icons}/>
-            <RiNetflixLine className={classes.Icons} style={{padding:'0 0 0 20'}} />
-            <IoMdArrowDropdown className={classes.Icons}style={{padding:'0 20 0 0'}}/>
+            <Link className={classes.Link}><AiOutlineGift className={classes.Icons}/></Link>
+            <Link className={classes.Link}><FaBell className={classes.Icons}/></Link>
+            <Link className={classes.Link}><RiNetflixLine className={classes.Icons}/>
+            <IoMdArrowDropdown className={classes.Icons} style={{overflow:'hidden'}}/></Link>
+
+            
+            
+            
             
           
         </div>

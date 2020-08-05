@@ -6,7 +6,8 @@ import classes from './NavIcon.module.css';
 
 const NavIcon = (props) => (
     <div className={classes.NavIcon}>
-        <Link activeClassName={classes.active} to={props.link} exact >{props.children}</Link>
+        {/* <Link activeClassName={classes.active} to={props.link} exact >{props.children}</Link> */}
+        <Link to='/'>{props.children} </Link>
     </div>
 
     

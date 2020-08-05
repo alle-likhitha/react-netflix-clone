@@ -2,22 +2,27 @@
     height: 600px;
     width: 100%;
     /* background-color: #767676 ; */
-    margin: auto;
+    margin: 50px 0 0 0 ;
+    padding: 0 0 100px 0;
     color: white;
-    background: linear-gradient(to right,black 10%,rgb(46, 43, 43));
-      overflow: scroll;  
-    /* background: url("../../assets/images/bellachao.jpg"); */
+    /* background: linear-gradient(to right,black 10%,rgb(46, 43, 43)); 
+    linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),*/
+      /* overflow: scroll;   */
+    
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.849),
+     rgba(248, 248, 248, 0)), url("../../assets/images/friendswall2.jpg");
     background-size: 100% 100%;
+    background-position-x: 40%;
     background-repeat: no-repeat;
-    /* background-position: 700px ; */
+    /* background-position: 300px ; */
     
 }
 .ImgDiv{
-    width: 200px;
-    height: 100px;
-    padding: 20px;
+    /* width: 200px;
+    height: 100px; */
+    /* padding: 20px; */
     align-items: center;
-    padding: 15% 0;
+    padding: 10% 0;
 }
 
 .SvgTag{
@@ -25,18 +30,22 @@
     height: 35px;
     align-items: center;
     stroke: white;
+    text-align: center;
     stroke-width: 5px;
-    padding: 5px 5px 0 40px;
+    margin: 5px 5px 0 40px;
+    /* font-size: 6px; */
+    position: relative;
 }
 
 .Topshow{
     width: 250px;
     height: 40px;
-    position: absolute;
+    position: relative;
     box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+
 }
 .paraDiv{
     width: 500px;
@@ -44,4 +53,13 @@
     padding: 5px 5px 0px 40px;
     margin-top: 30px;
     font-size: 20px;
+}
+
+.buttonDiv{
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    margin-left: 40px ;
+    
+
 }
