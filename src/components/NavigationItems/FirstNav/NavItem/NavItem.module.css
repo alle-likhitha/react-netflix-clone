@@ -16,6 +16,11 @@
     font-size: 13px;
 }
 
+.active{
+    color: red;
+    font-weight: bold;
+}
+
 .NavItem a:hover,
 .NavItem a:active,
 .NavItem a.active {

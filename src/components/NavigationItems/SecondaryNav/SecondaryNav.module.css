@@ -16,16 +16,40 @@
     }
 }
 
-.Link{
+.SecondaryNav button{
     margin: 20px;
     display: flex;
+    /* color: red; */
+    background-color:transparent;
     flex-direction: row;
+    border: none;
+    text-decoration: none;
+    color: transparent;
+    outline-style: none; 
 }
+/* .SecondaryNav button{
+    text-decoration: none;
+    color: transparent;
+    border: none;
 
+} */
+.SecondaryNav button:active{
+    display: flex;
+    color: red;
+}
+.active:active{
+    color: red;
+}
 
 .Icons {
     color: white;
     /* padding: 20px 0px; */
     /* size: 15px; */
     /* margin: 20px; */
+}
+
+.Icons:hover,
+.Icons:active,
+.Icons:active{
+    color: red;
 }

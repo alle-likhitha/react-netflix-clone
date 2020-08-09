@@ -15,3 +15,10 @@
     display: block;
     font-size: 13px;
 }
+
+
+.NavIcon a:hover,
+.NavIcon a:active,
+.NavIcon a.active {
+    color: red
+}

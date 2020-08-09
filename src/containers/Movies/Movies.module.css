@@ -1,0 +1,8 @@
+.Movies{
+    height: 1000px;
+    width: 100%;
+    margin: 0;
+    background:linear-gradient(to right,black 10%,rgb(46, 43, 43));;
+    overflow: scroll;
+    justify-content: space-between;
+}

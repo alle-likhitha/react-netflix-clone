@@ -1,10 +1,7 @@
 .Toolbar{
     height: 70px;
-    background:linear-gradient(
-        to right,
-        black 10%,
-        rgb(46, 43, 43)
-      );
+    background:linear-gradient(to right, rgba(0, 0, 0, 0.849),
+    rgba(248, 248, 248, 0));
     color: white;
     width: 100%;
     padding: 0 20px;
@@ -19,4 +16,8 @@
     z-index: 90;
     left: 0;
     /* bottom: 0; */
+}
+
+.Toolbar button{
+    border: transparent;
 }

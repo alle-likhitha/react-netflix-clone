@@ -12,7 +12,8 @@ class NetflixMain extends Component{
             popular: 'Popular on Netflix',
             newReleases: 'New Releases',
             indian: 'Indian Movies'
-        }
+        },
+        search : false
     }
     render(){
         let list = Object.keys(this.state.mylistNames)

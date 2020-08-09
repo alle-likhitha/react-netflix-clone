@@ -2,22 +2,52 @@
     height: 120px;
     width: 200px;
     background-color: thistle;
+    cursor: pointer;
     /* padding: 5px; */
     /* margin: 5px 1px 0px 1px; */
     text-align: center;
-    overflow: hidden;
-    transition: 0.5 all ease-in-out;
+    /* overflow: hidden; */
+    /* transition: 0.5 all ease-in-out; */
     
 }
 
-.ListContents img{
+.Image{
     height: 100%;
     width: 100%;
-    transition: 0.5s all ease-in-out;
+    transition: 0.5s all ;
+    background-color: black;
+    background-image: url("../../../assets/images/tokyoGhoul.jpeg");
+    background-size: cover;
+}
+
+.ListContents:hover .Image,
+.ListContents:focus .Image{
+    transform: scale(1.3);
 }
 
 
-.ListContents:hover,
-.ListContents:hover img{ 
-    transform: scale(1.5); 
-} 
+.ListContents:hover .Image:before,
+.ListContents:focus .Image:before{
+    display: block;
+}
+span {
+    color: white; /* Good thing we set a fallback color! */
+    font-family: sans-serif;
+    padding: 25%;
+    position: relative;
+    display: none;
+}
+.ListContents:hover span,
+.ListContents:focus span {
+  display: block;
+}
+.Image:before{
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(15, 14, 14, 0.466)
+}

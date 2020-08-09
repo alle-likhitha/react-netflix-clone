@@ -17,7 +17,6 @@ const MyList = props =>{
             <ListContents />
             <ListContents />
             <ListContents />
-            <ListContents />
             {/* <ListContents /> */}
         
         </div>
