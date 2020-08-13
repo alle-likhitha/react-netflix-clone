@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { button } from 'react-router-dom'
+import { button, NavLink } from 'react-router-dom'
 import NavIcon from './NavIcon/NavIcon';
 import classes from './SecondaryNav.module.css';
 import {FaSearch} from 'react-icons/fa';
@@ -23,7 +23,9 @@ class SecondaryNav extends Component{
     if(this.state.search){
         issearch = <SearchBar />
     }
-    
+    // onGiftHandler=(props)=>{
+        
+    // }
         return(
             <div className={classes.SecondaryNav}>
                 {/* <SearchBar /> */}
@@ -32,7 +34,8 @@ class SecondaryNav extends Component{
                 
                 <NavIcon>CHILDREN</NavIcon>
                 <NavIcon>DVD</NavIcon>
-                <button  ><AiOutlineGift className={classes.Icons}/></button>
+                <NavLink activeClassName={classes.Icons} to='/referfriends' exact >
+                    <AiOutlineGift className={classes.Icons}/></NavLink>
                 <button ><FaBell className={classes.Icons}/></button>
                 <button ><RiNetflixLine className={classes.Icons}/>
                 <IoMdArrowDropdown className={classes.Icons} style={{overflow:'hidden'}}/></button>

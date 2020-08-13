@@ -1,7 +1,7 @@
 .Toolbar{
     height: 70px;
     background:linear-gradient(to right, rgba(0, 0, 0, 0.849),
-    rgba(248, 248, 248, 0));
+    rgba(0, 0, 0, 0.541));
     color: white;
     width: 100%;
     padding: 0 20px;

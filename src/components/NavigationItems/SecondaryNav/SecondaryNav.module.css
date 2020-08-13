@@ -52,4 +52,9 @@
 .Icons:active,
 .Icons:active{
     color: red;
+
+}
+.active{
+    color: red;
+    font-weight: bold;
 }
