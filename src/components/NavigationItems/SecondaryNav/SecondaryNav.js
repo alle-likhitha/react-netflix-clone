@@ -6,23 +6,36 @@ import {FaSearch} from 'react-icons/fa';
 import {FaBell} from 'react-icons/fa';
 import {AiOutlineGift} from 'react-icons/ai';
 import {RiNetflixLine} from 'react-icons/ri';
-import {IoMdArrowDropdown} from 'react-icons/io'
+import {IoMdArrowDropdown} from 'react-icons/io';
 import SearchBar from '../../SearchBar/SearchBar';
+import Accounts from '../../Accounts/Accounts';
 
 
 class SecondaryNav extends Component{
     state = {
-        search:false
+        search:false,
+        accountsopen: false
     }
     onSrearchHandler=(props)=>{
         let x = !this.state.search
         this.setState({search:x})
     }
+
+    onOpenAccounts = props =>{
+        let y = !this.state.accountsopen
+        this.setState({accountsopen: y})
+    }
+
     render(){
     let issearch = null
+    let isopenaccountsbar = null
     if(this.state.search){
         issearch = <SearchBar />
     }
+    if(this.state.accountsopen){
+        isopenaccountsbar = <Accounts />
+    }
+
     // onGiftHandler=(props)=>{
         
     // }
@@ -34,12 +47,20 @@ class SecondaryNav extends Component{
                 
                 <NavIcon>CHILDREN</NavIcon>
                 <NavIcon>DVD</NavIcon>
-                <NavLink activeClassName={classes.Icons} to='/referfriends' exact >
-                    <AiOutlineGift className={classes.Icons}/></NavLink>
+                <NavLink activeClassName={classes.active} to='/referfriends' exact >
+                    <AiOutlineGift className={classes.Icons}> </AiOutlineGift> </NavLink>
                 <button ><FaBell className={classes.Icons}/></button>
-                <button ><RiNetflixLine className={classes.Icons}/>
+                <div className={classes.dropdown}>
+                <button onClick={this.onOpenAccounts}><RiNetflixLine className={classes.Icons}/>
                 <IoMdArrowDropdown className={classes.Icons} style={{overflow:'hidden'}}/></button>
+                <div className={classes.dropdownContent}>
+                    <p>My Account</p>
+                    <p>Rushi</p>
+                    <p>Likhi</p>
+                    <p>Bunny</p>
+                </div>
                 
+                </div>
             </div>
         );
     }

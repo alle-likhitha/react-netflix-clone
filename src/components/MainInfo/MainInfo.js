@@ -12,7 +12,7 @@ const MainInfo = props =>{
        
         <div className={classes.MainInfo}>
             <div className={classes.ImgDiv}>
-                <img style={{height:'150px', width:'400px', padding:'0 0 15px 40px'}} src={friends} alt = 'MONEY HEIST' />
+                <img style={{height:'150px', width:'400px', padding:'0 0 15px 40px'}} src={friends} alt = 'Friends icon' />
             
             <div className={classes.Topshow}>
             <svg className={classes.SvgTag}>

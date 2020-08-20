@@ -1,0 +1,9 @@
+.Accounts{
+    height: 300px;
+    width : 150px;
+    display: list-item;
+    position: relative;
+    background-color: black;
+    margin: 30px;
+    margin-top: 40px;
+}
