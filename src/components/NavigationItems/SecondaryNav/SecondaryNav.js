@@ -53,13 +53,13 @@ class SecondaryNav extends Component{
                 <div className={classes.dropdown}>
                 <button onClick={this.onOpenAccounts}><RiNetflixLine className={classes.Icons}/>
                 <IoMdArrowDropdown className={classes.Icons} style={{overflow:'hidden'}}/></button>
-                <div className={classes.dropdownContent}>
+                {/* <div className={classes.dropdownContent}>
                     <p>My Account</p>
                     <p>Rushi</p>
                     <p>Likhi</p>
                     <p>Bunny</p>
-                </div>
-                
+                </div> */}
+                {isopenaccountsbar}
                 </div>
             </div>
         );

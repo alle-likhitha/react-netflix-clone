@@ -1,0 +1,62 @@
+.Auth{
+    text-align: center;
+    height: auto;
+    width: auto;
+    align-content: center;
+    color: white;
+    display: block;
+    position: relative;
+    background-size: 100% 100%;
+
+}
+.Textdiv{
+    height: 500px;
+    align-content: center;
+    display: block;
+    position: relative;
+    background-color: black;
+    padding-top: 190px
+
+}
+.Nextdiv{
+    width: auto;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    border-top: 7px solid grey;
+    justify-content: space-evenly;
+    /* align-content: space-around; */
+    /* background-color: rgb(29, 28, 28); */
+
+}
+.Quesdiv{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: black;
+    border-top: 7px solid grey;
+    justify-content: center;
+}
+p{
+    margin: 10px;
+}
+.But{
+height: 80px;
+width: 800px;
+background-color: grey;
+color: black;
+margin: 10px;
+text-align: start;
+display: inline-block;
+}
+.Innerdiv{
+    align-content: center;
+    color: white;
+    /* display: flex;
+    flex-direction: column;
+    justify-self: center; */
+    position: relative;
+}

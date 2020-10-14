@@ -6,6 +6,7 @@ import Layout from './hoc/Layout/Layout';
 import TvShows from './containers/TvShows/TvShows';
 import Movies from './containers/Movies/Movies';
 import GiftPage from './components/GiftPage/GiftPage';
+import Auth from './containers/Auth/Auth';
 function App() {
 
   let routes = (
@@ -14,7 +15,7 @@ function App() {
       <Route path='/movies' exact component={Movies} />
       <Route path='/' exact component={NetflixMain} />
       <Route path='/referfriends' exact component={GiftPage} />
-      
+      <Route path='/auth' exact component= {Auth} />
       <Redirect to='/' />
     </Switch>
   );
