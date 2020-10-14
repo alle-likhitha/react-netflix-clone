@@ -12,7 +12,7 @@ import json
 import sys
 import time
 
-gis = GoogleImagesSearch('AIzaSyBA-68SYUJ9aI6-KKCi3sDaG7w_Wqj2Y5Q', 'drugstore-287316')
+# gis = GoogleImagesSearch('AIzaSyBA-68SYUJ9aI6-KKCi3sDaG7w_Wqj2Y5Q', 'drugstore-287316')
 _search_params = {
     'q': 'puppies',
     'num': 2,
