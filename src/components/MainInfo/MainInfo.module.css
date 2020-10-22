@@ -11,6 +11,8 @@
     
     background-image:linear-gradient(to right, rgba(0, 0, 0, 0.849),
      rgba(248, 248, 248, 0)), url("../../assets/images/friendswall2.jpg");
+     /* background-image:linear-gradient(to right, rgba(0, 0, 0, 0.952),
+     rgba(248, 248, 248, 0)), url("../../assets/images/friendswall2.jpg"); */
     background-size: 100% 100%;
     background-position-x: 40%;
     background-repeat: no-repeat;

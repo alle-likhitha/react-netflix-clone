@@ -3,6 +3,7 @@ import classes from './Auth.module.css';
 import Tvphoto from '../../assets/images/loginpage.jpg';
 import {FiPlus} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
+import Popup from '../../components/PopUp/Popup';
 class Auth extends Component{
     state = {
         questions:[
@@ -25,7 +26,7 @@ class Auth extends Component{
 
     OnQClickHandler = props =>{
         console.log("kasydgjuhsgd",props)
-        let cha = [true, props.xi]
+        let cha = [true, props]
         this.setState({clicked:cha})
     }
     render(){
@@ -93,7 +94,8 @@ class Auth extends Component{
                         {qands}
                     </div>
                 </div>
-
+                <br />
+                <Popup />
             </div>
         );
     }
