@@ -1,0 +1,18 @@
+.Signin{
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: url("../../assets/images/friendswallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgb(255, 255, 255);
+}
+.InnerBox{
+    height: 500px;
+    width: 450px;
+    margin: 0 auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

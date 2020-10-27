@@ -3,7 +3,8 @@ import classes from './Auth.module.css';
 import Tvphoto from '../../assets/images/loginpage.jpg';
 import {FiPlus} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
-class Auth extends Component{
+import Signin from '../../components/Signin/Signin';
+class Auth extends Component{ 
     state = {
         questions:[
             "What is Netflix?",
@@ -93,6 +94,9 @@ class Auth extends Component{
                         {qands}
                     </div>
                 </div>
+                <br />
+                <br />
+                <Signin />
             </div>
         );
     }
