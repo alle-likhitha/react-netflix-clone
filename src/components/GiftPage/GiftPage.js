@@ -14,7 +14,7 @@ const GiftPage = props =>{
                 <p>Share this link with friends or family and they'll start watching Netflix.</p>
                 <div className={classes.LinkName}>
                     <p>your link!!</p>
-                    <button>Copy Link</button>
+                    <button className={classes.BBbutton}>Copy Link</button>
                 </div>
 
             </div>

@@ -47,6 +47,9 @@ p{
 .But{
 height: 80px;
 width: 800px;
+outline: none;
+cursor: pointer;
+font: inherit;
 background-color: rgb(37, 37, 37);
 color: rgb(255, 255, 255);
 margin: 12px 0 2px 0;

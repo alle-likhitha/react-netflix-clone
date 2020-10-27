@@ -11,12 +11,12 @@ const MyList = props =>{
         <div className={classes.MyListDiv}>
              <h3 style={{padding:'0 0 0 40px', margin:0, color:'white'}}>{props.type}</h3>
             <div className={classes.MyList}>
-            <ListContents />
-            <ListContents />
-            <ListContents />
-            <ListContents />
-            <ListContents />
-            <ListContents />
+            <ListContents showup = {props.showup}/>
+            <ListContents showup = {props.showup}/>
+            <ListContents showup = {props.showup}/>
+            <ListContents showup = {props.showup}/>
+            <ListContents showup = {props.showup}/>
+            <ListContents showup = {props.showup}/>
             {/* <ListContents /> */}
         
         </div>
