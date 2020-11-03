@@ -3,7 +3,10 @@ import classes from './Auth.module.css';
 import Tvphoto from '../../assets/images/loginpage.jpg';
 import {FiPlus} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
-import Signin from '../../components/Signin/Signin';
+import { NavLink } from 'react-router-dom';
+import Formdata from '../../components/Signin/Formdata';
+// import Button from '../../ui/Button/Button';
+
 class Auth extends Component{ 
     state = {
         questions:[
@@ -66,7 +69,17 @@ class Auth extends Component{
                 {/* <br />
                 <br /><br /><br /> */}
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <br />
+                <br />
+                <Formdata />
+                <br />
+                <div style={{width:"350px", display:"flex", flexDirection:"row", justifyContent:"space-evenly", margin:"0 auto"}}>
+                {/* <NavLink to="/auth/signup" className={classes.Nav}>Sign Up</NavLink> */}
+                <p>Already a user! Please </p>
+                <NavLink to="/auth/login" className={classes.Nav}>Log in</NavLink>
                 </div>
+                </div>
+                
                 <div className={classes.Nextdiv}>
                 <div className={classes.Divinnext}>
                         <p style={{fontSize:"50px", fontWeight:"bold", margin:"none"}}> Enjoy on your TV. </p>
@@ -94,9 +107,6 @@ class Auth extends Component{
                         {qands}
                     </div>
                 </div>
-                <br />
-                <br />
-                <Signin />
             </div>
         );
     }

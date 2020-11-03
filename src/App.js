@@ -7,6 +7,8 @@ import TvShows from './containers/TvShows/TvShows';
 import Movies from './containers/Movies/Movies';
 import GiftPage from './components/GiftPage/GiftPage';
 import Auth from './containers/Auth/Auth';
+import Login from './components/Signin/Signin';
+
 function App() {
 
   let routes = (
@@ -16,6 +18,8 @@ function App() {
       <Route path='/' exact component={NetflixMain} />
       <Route path='/referfriends' exact component={GiftPage} />
       <Route path='/auth' exact component= {Auth} />
+      <Route path="/auth/login" exact component={Login} />
+      <Route path="/auth/signup" exact component={Auth} />
       <Redirect to='/' />
     </Switch>
   );

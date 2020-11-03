@@ -1,18 +1,58 @@
 .Signin{
-    height: 100%;
-    width: 100%;
-    display: block;
     background: url("../../assets/images/friendswallpaper.jpg");
-    background-size: cover;
     background-repeat: no-repeat;
-    color: rgb(255, 255, 255);
+    background-size: cover;
+    height: 800px;
+    /* height: 1000px; */
+    width: 100%;
+    top: 0;
 }
-.InnerBox{
+.InnerBox123{
     height: 500px;
-    width: 450px;
-    margin: 0 auto;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    color: white;
+    border-radius: 4px;
+    align-content: center;
+    background-color: #000000e5;
+    padding: 10px;
+    position: fixed;
+    top: 20%;
+    left: 34%;
+
+    
+    box-sizing: border-box;
+    justify-content: center;
 }
+.Box12{
+    margin:0px auto;
+    width: 320px;
+    display: block;
+    text-align: center;
+}
+
+.Button{
+    height: auto;
+    width: 280px;
+    background-color: rgb(231, 33, 33);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 10px 0 10px 0;
+    /* font-size: 10px; */
+    text-align: center;
+    display: inline-block;
+}
+.PPdiv{
+    text-align: start;
+    color: rgb(170, 174, 179);
+    font-size: 15px;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+/* 8orm{
+    margin-top: 200px;
+} */
+/* @media(min-width:600px){
+    .Box12{
+        width: 400px;
+    }
+} */

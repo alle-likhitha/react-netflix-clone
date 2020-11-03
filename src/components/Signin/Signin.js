@@ -1,100 +1,43 @@
 import React, { Component } from 'react';
 import classes from './Signin.module.css';
-import Input from '../../ui/Input/Input';
-// import Button from '../../ui/Button/Button';
-import { validityCheckHandler } from '../../hoc/Shared/Utility';
-import {updateObject} from '../../hoc/Shared/Utility';
+import Formdata from './Formdata';
+import { NavLink } from 'react-router-dom';
 class Signin extends Component{
 
 
     state={
-        controls:{
-            email:{
-                elementType:'input',
-                elementConfig:{
-                    type:'email',
-                    placeholder:'Mail Id'
-                },
-                value:'',
-                validation:{
-                    required:true,
-                    isEmail:true
 
-                },
-                isValid:false,
-                touched:false,
-                label:"Email ID:"
+        rememberme: false
 
-            },
-            password:{
-                elementType:'input',
-                elementConfig:{
-                    type:'password',
-                    placeholder:'Password'
-                },
-                value:'',
-                validation:{
-                    required:true,
-                    minLength: true
-
-                },
-                isValid:false,
-                touched:false,
-                label:'Password:'
-
-            }
-            
-        },
-        isSignup:true
     }
 
-    formChangeHandler(event, controlName){
-        // console.log(this.state.controls)
-        const updateState = updateObject(this.state.controls, {
-            [controlName]: updateObject(this.state.controls[controlName], {
-                value:event.target.value,
-                touched:true,
-                isValid: validityCheckHandler(this.state.controls[controlName].value, this.state.controls[controlName].validation)
-            })
-        });
-
-        this.setState({controls:updateState})
+    CheckBoxHandler(){
+        let x = this.state.rememberme
+        console.log(x)
+        this.setState({rememberme: x})
     }
+
+
+
     render(){
-        let formeleArray = [];
-        for(let key in this.state.controls){
-            formeleArray.push({
-                id:key,
-                config:this.state.controls[key]
-            })
-           
-        }
-        let formdata =(
-            <form >
-                 {formeleArray.map(formelement=>(
-                    <Input key={formelement.id}
-                    elementType={formelement.config.elementType}
-                    elementConfig={formelement.config.elementConfig}
-                    value={formelement.config.value} 
-                    shouldValidate={formelement.config.validation}
-                    changed={(event)=> this.formChangeHandler(event, formelement.id)}
-                    touched={formelement.config.touched}
-                    invalid={!formelement.config.isValid}
-                    // label={formelement.config.label} 
-                    />
-                        
-                    ))}
-                    <button clicked={this.submitHandler}>Submit</button>
-                </form>
 
-        )
         return(
             <div className={classes.Signin}>
-                <div className={classes.InnerBox}>
+                <div className={classes.Box12}>
+                <div className={classes.InnerBox123} >
                     <h1>Sign In</h1>
-                    {formdata}
-                    <p>Remember ME     Need Help!</p>
-                    <p></p>
+                    {/* {formdata} */}
+                    <Formdata />
+                    <label style={{position:"fixed", padding:'10px'}}><input name="Rememberme" type="checkbox" checked={this.state.Rememberme} onChange={this.CheckBoxCheck}/>   Remember Me</label>
+                    {/* <p>Need Help!</p> */}
+
+                    <div className={classes.PPdiv}>
+                    <p>Login with google</p>
+                    <p>New to Netflix? <NavLink to="/auth/signup">Signup Now.</NavLink></p>
+                    </div>
+                    
+                </div>
+                    
                 </div>
             </div>
         )

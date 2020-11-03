@@ -1,9 +1,9 @@
 .Input{
     width: 100%;
-    padding: 10px;
-    padding-left: 60px;
+    padding: 4px;
     margin-bottom: 15px;
     box-sizing: border-box;
+    color: black;
     /* justify-items: center;
     align-content: center; */
 }
@@ -21,11 +21,12 @@ label{
 }
 .InputEle{
     outline: none;
-    border: 1px solid #ccc;
-    background-color: rgb(119, 119, 119);
+    border: 1px solid rgb(0, 0, 0);
+    color: black;
+    background-color: rgb(48, 46, 46);
     font: inherit;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 6px;
     /* justify-content: center;
     align-content: center; */
     /* margin-left: 40%; */
@@ -36,7 +37,7 @@ label{
 }
 .InputEle:focus{
     outline: none;
-    background-color: #ccc;
+    background-color: rgb(109, 106, 106);
 }
 
 
@@ -44,3 +45,9 @@ label{
     border-color:red;
     background-color: rgb(243, 152, 141);
 }
+
+input::placeholder {
+    color: rgb(136, 133, 133);
+  }
+
+  
