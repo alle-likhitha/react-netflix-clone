@@ -42,9 +42,62 @@ class Formdata extends Component{
                 label:'Password:'
 
             }
+
             
         },
-        isSignup:true
+        alldetails:{
+            name:{
+                elementType:'input',
+                elementConfig:{
+                    type:'text',
+                    placeholder:'Full Name'
+                },
+                value:'',
+                validation:{
+                    required:false,
+                    minLength: true
+
+                },
+                isValid:false,
+                touched:false,
+                label:'Name'
+            },
+            phone:{
+                elementType:'input',
+                elementConfig:{
+                    type:'phone',
+                    placeholder:'Phone Number'
+                },
+                value:'',
+                validation:{
+                    required:true,
+                    minLength: true
+
+                },
+                isValid:false,
+                touched:false,
+                label:'Phone Number'
+            },
+            dob:{
+                elementType:'input',
+                elementConfig:{
+                    type:'date',
+                    placeholder:'dateofbirth'
+                },
+                value:'',
+                validation:{
+                    required:true,
+                    minLength: true
+
+                },
+                isValid:false,
+                touched:false,
+                label:'Date Of Birth'
+            }
+
+        },
+        isSignup:true,
+        requrieddetails:false
     }
 
     formChangeHandler(event, controlName){
@@ -62,6 +115,7 @@ class Formdata extends Component{
 
     render(){
         let formeleArray = [];
+        console.log(this.props.requireddet)
         for(let key in this.state.controls){
             formeleArray.push({
                 id:key,
@@ -85,13 +139,42 @@ class Formdata extends Component{
                         
                     ))}
                     <button className={classes.Button}
-                    clicked={this.submitHandler}>Sign In</button>
+                    onClick={this.props.onSubmit}>Continue</button>
                 </form>
 
         )
+        let alld = []
+        if(this.props.requireddet){
+        for(let key in this.state.alldetails){
+            alld.push({
+                id:key,
+                config:this.state.alldetails[key]
+            })
+        formdata = (
+            <form >
+                 {alld.map(formelement=>(
+                    <Input key={formelement.id}
+                    elementType={formelement.config.elementType}
+                    elementConfig={formelement.config.elementConfig}
+                    value={formelement.config.value} 
+                    shouldValidate={formelement.config.validation}
+                    changed={(event)=> this.formChangeHandler(event, formelement.id)}
+                    touched={formelement.config.touched}
+                    invalid={!formelement.config.isValid}
+                    // label={formelement.config.label} 
+                    />
+                        
+                    ))}
+                    <button className={classes.Button}
+                    clicked={this.submitHandler}>Sign In</button>
+                </form>
+        )
+        }
+        }
         return(
             <div className={classes.Box12}>
                 {formdata}
+                {/* {alldetails} */}
             </div>
         )
     }

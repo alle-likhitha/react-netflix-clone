@@ -6,7 +6,7 @@ class Signin extends Component{
 
 
     state={
-
+        isSignup: true,
         rememberme: false
 
     }
@@ -27,7 +27,7 @@ class Signin extends Component{
                 <div className={classes.InnerBox123} >
                     <h1>Sign In</h1>
                     {/* {formdata} */}
-                    <Formdata />
+                    <Formdata requireddet={false} isSign = {this.state.isSignup}/>
                     <label style={{position:"fixed", padding:'10px'}}><input name="Rememberme" type="checkbox" checked={this.state.Rememberme} onChange={this.CheckBoxCheck}/>   Remember Me</label>
                     {/* <p>Need Help!</p> */}
 

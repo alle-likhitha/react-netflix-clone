@@ -65,3 +65,10 @@
     
 
 }
+.Playdiv{
+    display: block;
+    padding: 100px;
+    background-color: black;
+    color: white;
+    
+}

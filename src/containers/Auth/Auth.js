@@ -5,6 +5,9 @@ import {FiPlus} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 import Formdata from '../../components/Signin/Formdata';
+import Model from '../../ui/Model/Model';
+import Alldetails from '../../components/Signin/Alldetails';
+
 // import Button from '../../ui/Button/Button';
 
 class Auth extends Component{ 
@@ -24,13 +27,24 @@ class Auth extends Component{
             "Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want."
 
         ],
-        clicked: [true,null]
+        clicked: [true,null],
+        continueSignup: false,
+
+
     }
 
     OnQClickHandler = props =>{
         console.log("kasydgjuhsgd",props)
         let cha = [true, props]
         this.setState({clicked:cha})
+    }
+    cancelOrderHandler = () =>{
+        this.setState({continueSignup:false});
+    }
+    OnContinueHandler = event =>{
+        event.preventDefault();
+        console.log("lala continue clicked")
+        this.setState({continueSignup:true});
     }
     render(){
 
@@ -60,9 +74,16 @@ class Auth extends Component{
             }
             
         })
-        
+        let details = null
+        if(this.state.continueSignup){
+            details = <Alldetails />
+        }
         return(
             <div className={classes.Auth}>
+                <Model show={this.state.continueSignup} modelClosed={this.cancelOrderHandler}>
+                {/* <Model show = {true}> */}
+                    {details}
+                </Model>
                 <div className={classes.Textdiv}>
                 <p style={{fontSize:"50px", fontWeight:"bold", margin:"30px"}}>Unlimited movies, TV <br /> shows and more.</p>
                 <p style={{fontSize:"25px", margin:"20px"}}>Watch anywhere, Cancel anytime.</p>
@@ -71,7 +92,7 @@ class Auth extends Component{
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
                 <br />
                 <br />
-                <Formdata />
+                <Formdata onSubmit = {this.OnContinueHandler} />
                 <br />
                 <div style={{width:"350px", display:"flex", flexDirection:"row", justifyContent:"space-evenly", margin:"0 auto"}}>
                 {/* <NavLink to="/auth/signup" className={classes.Nav}>Sign Up</NavLink> */}

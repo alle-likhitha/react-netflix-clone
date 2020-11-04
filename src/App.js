@@ -8,7 +8,7 @@ import Movies from './containers/Movies/Movies';
 import GiftPage from './components/GiftPage/GiftPage';
 import Auth from './containers/Auth/Auth';
 import Login from './components/Signin/Signin';
-
+import PlayContent from './components/MainInfo/Playcontent';
 function App() {
 
   let routes = (
@@ -20,6 +20,7 @@ function App() {
       <Route path='/auth' exact component= {Auth} />
       <Route path="/auth/login" exact component={Login} />
       <Route path="/auth/signup" exact component={Auth} />
+      <Route path="/playcontent" exact component={PlayContent} />
       <Redirect to='/' />
     </Switch>
   );
