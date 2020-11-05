@@ -1,16 +1,8 @@
-from Utils.DButils import DButils
-import csv
+from Utils import DButils
 import pandas as pd
 from bs4 import BeautifulSoup
 dbutils = DButils()
 import urllib.request
-from google_images_search import GoogleImagesSearch
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-import os
-import json
-import sys
-import time
 
 # gis = GoogleImagesSearch('AIzaSyBA-68SYUJ9aI6-KKCi3sDaG7w_Wqj2Y5Q', 'drugstore-287316')
 _search_params = {

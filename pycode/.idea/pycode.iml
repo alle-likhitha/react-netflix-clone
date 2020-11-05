@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/RestServices/app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/RestServices" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/RestServices/app/UserAuth" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/RestServices/app/Utils" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

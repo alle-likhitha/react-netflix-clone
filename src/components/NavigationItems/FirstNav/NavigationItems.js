@@ -7,7 +7,7 @@ const navigationItems = (props) =>(
         <NavItem link='/'>Home</NavItem>
         <NavItem link='/tvshows'>Tv Shows</NavItem>
         <NavItem link='/movies'>Movies</NavItem>
-        <NavItem link='/latest'>Latest</NavItem>
+        {/* <NavItem link='/latest'>Latest</NavItem> */}
 
 
     </ul>
