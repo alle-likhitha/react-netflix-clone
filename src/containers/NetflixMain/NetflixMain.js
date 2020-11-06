@@ -6,6 +6,7 @@ import MyList from '../../components/MyList/MyList';
 import Popup from '../../components/PopUp/Popup';
 import Model from '../../ui/Model/Model';
 
+import axios from 'axios';
 class NetflixMain extends Component{
 
     state = {
@@ -13,15 +14,29 @@ class NetflixMain extends Component{
             Mylist: 'My List',
             popular: 'Popular on Netflix',
             newReleases: 'New Releases',
-            indian: 'Indian Movies'
+            tvshows: 'TV Shows'
         },
         search : false,
-        Onclick : false
+        Onclick : false,
+        data : null,
+        showdata : null
     }
-
-    OnClickedHandler = () =>{
+    componentDidMount(){
+        this.DataFetchHandler()
+    }
+    OnClickedHandler = (id) =>{
     let x = !this.state.Onclick
+    console.log(id)
     console.log("clickeddd",x)
+    for(let i in this.state.data){
+        // console.log(this.state.data[i])
+        if(this.state.data[i]._id === id){
+            console.log(this.state.data[i])
+            this.setState({showdata: this.state.data[i] })
+            break
+        }
+
+    }
     this.setState({Onclick: x})
     
     }
@@ -29,15 +44,49 @@ class NetflixMain extends Component{
         this.setState({Onclick:false});
     }
 
-    render(){
-        
-        let list = Object.keys(this.state.mylistNames)
-        .map(igKey =>{
-            return <MyList key = {igKey} type={this.state.mylistNames[igKey]} showup={this.OnClickedHandler} />
+    DataFetchHandler = props =>{
+        axios.get("http://localhost:9000/main/get-all")
+        .then( res =>{
+            console.log(res)
+            const fetched = [];
+            for(let key in res.data){
+                fetched.push( {
+                    ...res.data[key],
+                    id: key
+                })
+            }
+            this.setState({data : fetched[0]})
+            console.log(typeof(fetched))
+            console.log(Array.isArray(fetched))
+            // console.log(this.state.data[0].Title)
+            console.log(Array.isArray(this.state.data))
         })
+    }
+
+    render(){
+        let x = null
+        let list = null
+        if(this.state.data){
+        list = Object.keys(this.state.mylistNames)
+        .map(igKey =>{
+            x += 6
+            const mydata = []
+            for(var i = x; i < x+6; i++){
+                mydata.push(this.state.data[i])
+            }
+            // console.log(mydata)
+            setTimeout(
+                2000
+            )
+            console.log(mydata)
+
+            return <MyList key = {igKey} type={this.state.mylistNames[igKey]} showup={this.OnClickedHandler} data = {mydata} />
+        })
+        }
+        
         let discription = null;
-        if(this.state.Onclick){
-            discription = <Popup />
+        if(this.state.Onclick && this.state.showdata){
+            discription = <Popup data = {this.state.showdata}/>
         }
         // .map(igKey => {
         //     return [...Array(this.state.mylistNames[igKey] )].map((_,i) => {
@@ -55,6 +104,7 @@ class NetflixMain extends Component{
                 </Model>
                 
                 <MainInfo />
+        {/* <p>{this.state.data[0]}</p> */}
                 {list}
             </div>
 
