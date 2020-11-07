@@ -39,11 +39,8 @@ logger.setLevel(logging.ERROR)
 package_dir = os.path.dirname(os.path.abspath(__file__))
 
 from app.UserAuth.login import mod_data as dataModule
-
-app.register_blueprint(dataModule)
-
+app.register_blueprint(dataModule, url_prefix='/login')
 from app.Maindata.Maindata import mod_data as dataModule
-
 app.register_blueprint(dataModule, url_prefix='/main')
 
 

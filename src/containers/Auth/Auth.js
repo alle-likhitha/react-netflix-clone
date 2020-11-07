@@ -7,6 +7,8 @@ import { NavLink } from 'react-router-dom';
 import Formdata from '../../components/Signin/Formdata';
 import Model from '../../ui/Model/Model';
 import Alldetails from '../../components/Signin/Alldetails';
+import axios from 'axios';
+// import {updateObject} from '../../hoc/Shared/Utility';
 
 // import Button from '../../ui/Button/Button';
 
@@ -29,9 +31,82 @@ class Auth extends Component{
         ],
         clicked: [true,null],
         continueSignup: false,
+        userdata: {
+            email:null,
+            password:null,
+            name:null,
+            phone:null,
+            dateofbirth:null
+        }
 
 
     }
+    // submitSignHandler = (props ) => {
+        submitSignHandler = ( email, password, isSignup ) => {
+        console.log("kjhsdbksjhbdkjhsbdallelllllllll")
+        console.log(isSignup)
+        // event.preventDefault();
+        if (isSignup) {
+            // const upstate = updateObject(this.state.userdata,{
+            //     email:email,
+            //     password:password,
+            // })
+            // this.setState({userdata:upstate})
+            this.setState({userdata:{
+                ...this.state.userdata,
+                email:email,
+                password:password
+            }})
+            console.log(this.state.userdata.email)
+            this.OnContinueHandler()
+        }
+        // this.props.onAuth( this.state.controls.email.value, this.state.controls.password.value, this.state.isSignup );
+        // else{
+        //     const queryparams = '?email=' +email+'&password='+password
+        //     axios.get('http://localhost:9000/login/verify-login'+queryparams)
+        //     .then(response => {
+        //         console.log(response)
+        //         if (response.data.data){
+
+        //             // dispatch(setAuthRedirectPath('/med', email))
+        //         }else{
+        //             // dispatch(authFail(response.data.error));
+        //         }
+        //     })
+        // }
+        
+    }
+    authSignup = (name, phone, dob) =>{
+        // event.preventDefault();
+        this.setState({userdata:{
+            ...this.state.userdata,
+            name:name,
+            phone:phone,
+            dateofbirth:dob
+        }})
+        // this.setState({userdata:upstate})
+        console.log(this.state.userdata)
+        this.authPost()
+        if(this.state.userdata.dateofbirth){
+            this.authPost()
+        }
+        
+    }
+    authPost = () =>{
+        // if(this.state.userdata.dateofbirth){
+        axios.post('http://localhost:9000/login/signup-user', this.state.userdata)
+        .then(response => {
+            console.log(response)
+            if (response.data.data){
+                    console.log(response)
+                // dispatch(setAuthRedirectPath('/med', email))
+            }else{
+                // dispatch(authFail(response.data.error));
+            }
+        })
+    // }
+}
+    
 
     OnQClickHandler = props =>{
         console.log("kasydgjuhsgd",props)
@@ -41,17 +116,19 @@ class Auth extends Component{
     cancelOrderHandler = () =>{
         this.setState({continueSignup:false});
     }
-    OnContinueHandler = event =>{
-        event.preventDefault();
+    OnContinueHandler = () =>{
+        // event.preventDefault();
+        console.log(this.state.userdata.email)
         console.log("lala continue clicked")
         this.setState({continueSignup:true});
     }
     render(){
-
+        console.log(this.state.userdata)
+        
         let qands = this.state.questions.map(qes =>{
-            console.log(this.state.questions.indexOf(qes))
+            // console.log(this.state.questions.indexOf(qes))
             let x = this.state.questions.indexOf(qes)
-            console.log(this.state.clicked)
+            // console.log(this.state.clicked)
             if(this.state.clicked[1] === x){
                 let ans = this.state.answers[x].split("\n").map(str => <p key={str[0]+str[6]}>{str}</p>);
                 // console.log(ans)
@@ -76,7 +153,7 @@ class Auth extends Component{
         })
         let details = null
         if(this.state.continueSignup){
-            details = <Alldetails />
+            details = <Alldetails authsignup = {this.authSignup}/>
         }
         return(
             <div className={classes.Auth}>
@@ -92,7 +169,7 @@ class Auth extends Component{
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
                 <br />
                 <br />
-                <Formdata onSubmit = {this.OnContinueHandler} />
+                <Formdata onSubmit = {this.submitSignHandler} />
                 <br />
                 <div style={{width:"350px", display:"flex", flexDirection:"row", justifyContent:"space-evenly", margin:"0 auto"}}>
                 {/* <NavLink to="/auth/signup" className={classes.Nav}>Sign Up</NavLink> */}

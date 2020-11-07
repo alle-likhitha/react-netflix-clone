@@ -15,7 +15,7 @@ const Alldel = props =>{
                     <h1>Please complete </h1>
                         <h1>the Sigup process</h1>
                     {/* {formdata} */}
-                    <Formdata requireddet={true} />
+                    <Formdata requireddet={true} authsignup ={props.authsignup} />
 
                     {/* <p>Need Help!</p> */}
 
