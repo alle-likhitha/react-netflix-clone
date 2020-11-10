@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import classes from './Auth.module.css';
-import Tvphoto from '../../assets/images/loginpage.jpg';
+import First from '../../assets/images/first.png';
+import Second from '../../assets/images/second.png';
+import Third from '../../assets/images/third.png';
+
 import {FiPlus} from 'react-icons/fi';
 import {FiX} from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
@@ -9,9 +12,6 @@ import Model from '../../ui/Model/Model';
 import Alldetails from '../../components/Signin/Alldetails';
 import axios from 'axios';
 import {Redirect} from 'react-router-dom';
-// import {updateObject} from '../../hoc/Shared/Utility';
-
-// import Button from '../../ui/Button/Button';
 
 class Auth extends Component{ 
     state = {
@@ -191,10 +191,10 @@ class Auth extends Component{
                         <p style={{fontSize:"50px", fontWeight:"bold", margin:"none"}}> Enjoy on your TV. </p>
                         <p style={{fontSize:"30px"}}>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
                     </div>
-                    <img style={{height:"200px", width:"40%"}} src={Tvphoto} alt='netflix in tv' />
+                    <img style={{height:"300px", width:"40%", paddingTop:"50px"}} src={First} alt='netflix in tv' />
                 </div>
                 <div className={classes.Nextdiv}>
-                <img style={{height:"200px", width:"40%"}} src={Tvphoto} alt='netflix in tv' />
+                <img style={{height:"300px", width:"40%", paddingTop:"50px"}} src={Second} alt='netflix in tv' />
                 <div className={classes.Divinnext}>
                         <p style={{fontSize:"50px", fontWeight:"bold", margin:"none"}}> Download your shows to watch offline. </p>
                         <p style={{fontSize:"30px"}}>Save your favourites easily and always have something to watch.</p>
@@ -205,7 +205,7 @@ class Auth extends Component{
                         <p style={{fontSize:"50px", fontWeight:"bold", margin:"none"}}> Watch everywhere. </p>
                         <p style={{fontSize:"30px"}}>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
                     </div>
-                    <img style={{height:"200px", width:"40%"}} src={Tvphoto} alt='netflix in tv' />
+                    <img style={{height:"300px", width:"40%", paddingTop:"50px"}} src={Third} alt='netflix in tv' />
                 </div>
                 <div className={classes.Quesdiv}>
                     <h1>Frequently Asked Questions</h1>

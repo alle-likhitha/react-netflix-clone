@@ -4,7 +4,7 @@ import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
 import NetflixMain from './containers/NetflixMain/NetflixMain';
 import Layout from './hoc/Layout/Layout';
 import TvShows from './containers/TvShows/TvShows';
-import Movies from './containers/Movies/Movies';
+// import Movies from './containers/Movies/Movies';
 import GiftPage from './components/GiftPage/GiftPage';
 import Auth from './containers/Auth/Auth';
 import Login from './components/Signin/Signin';

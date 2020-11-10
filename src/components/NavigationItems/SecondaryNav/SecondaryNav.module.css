@@ -17,7 +17,18 @@
     }
 }
 
-.SecondaryNav button{
+/* .SecondaryNav button{
+    margin: 20px;
+    display: flex;
+    color: white;
+    background-color:transparent;
+    flex-direction: row;
+    border: none;
+    text-decoration: none;
+    color: transparent;
+    outline-style: none; 
+} */
+.Butt{
     margin: 20px;
     display: flex;
     color: white;
@@ -34,10 +45,10 @@
     border: none;
 
 } */
-.SecondaryNav button:active{
+/* .SecondaryNav button:active{
     display: flex;
     color: red;
-}
+} */
 .active:active{
     color: red;
 }

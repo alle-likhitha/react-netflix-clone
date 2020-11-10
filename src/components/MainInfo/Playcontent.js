@@ -25,7 +25,7 @@ class Playcontent extends Component{
         <div className={classes.Playdiv}>
             <h1> Friends Funny Moments</h1>
             <Button iconname={{icon:FiXCircle}} clicked={this.historyHandler}>Close Player</Button>
-            <iframe width="100%" height="700px" src="">
+            <iframe width="100%" height="700px" src="https://www.youtube.com/embed/A9GyVeV1Yu8">
         </iframe>
         </div>
 

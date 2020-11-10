@@ -44,15 +44,15 @@ class SecondaryNav extends Component{
             <div className={classes.SecondaryNav}>
                 {/* <SearchBar /> */}
                 {issearch}
-                <button className={classes.active} onClick={this.onSrearchHandler} style={{ marginLeft:'0px'}}><FaSearch className={classes.Icons} style={{paddingLeft:'0px'}}/></button>
+                <button className={classes.Butt}  onClick={this.onSrearchHandler} style={{ marginLeft:'0px'}}><FaSearch className={classes.Icons} style={{paddingLeft:'0px'}}/></button>
                 
                 <NavItem link="/mystery">Mystery</NavItem>
                 {/* <NavItem link="/">DVD</NavItem> */}
                 <NavLink activeClassName={classes.active} to='/referfriends' exact >
                     <AiOutlineGift className={classes.Icons}> </AiOutlineGift> </NavLink>
-                <button ><FaBell className={classes.Icons}/></button>
+                <button className={classes.Butt}><FaBell className={classes.Icons}/></button>
                 <div className={classes.dropdown}>
-                <button onClick={this.onOpenAccounts}><RiNetflixLine className={classes.Icons}/>
+                <button onClick={this.onOpenAccounts} className={classes.Butt}><RiNetflixLine className={classes.Icons}/>
                 <IoMdArrowDropdown className={classes.Icons} style={{overflow:'hidden'}}/></button>
                 {isopenaccountsbar}
                 </div>
