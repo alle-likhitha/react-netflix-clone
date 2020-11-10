@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { button, NavLink } from 'react-router-dom'
-import NavIcon from './NavIcon/NavIcon';
+// import NavIcon from './NavIcon/NavIcon';
+import NavItem from '../FirstNav/NavItem/NavItem';
 import classes from './SecondaryNav.module.css';
 import {FaSearch} from 'react-icons/fa';
 import {FaBell} from 'react-icons/fa';
@@ -45,20 +46,14 @@ class SecondaryNav extends Component{
                 {issearch}
                 <button className={classes.active} onClick={this.onSrearchHandler} style={{ marginLeft:'0px'}}><FaSearch className={classes.Icons} style={{paddingLeft:'0px'}}/></button>
                 
-                <NavIcon>CHILDREN</NavIcon>
-                <NavIcon>DVD</NavIcon>
+                <NavItem link="/mystery">Mystery</NavItem>
+                {/* <NavItem link="/">DVD</NavItem> */}
                 <NavLink activeClassName={classes.active} to='/referfriends' exact >
                     <AiOutlineGift className={classes.Icons}> </AiOutlineGift> </NavLink>
                 <button ><FaBell className={classes.Icons}/></button>
                 <div className={classes.dropdown}>
                 <button onClick={this.onOpenAccounts}><RiNetflixLine className={classes.Icons}/>
                 <IoMdArrowDropdown className={classes.Icons} style={{overflow:'hidden'}}/></button>
-                {/* <div className={classes.dropdownContent}>
-                    <p>My Account</p>
-                    <p>Rushi</p>
-                    <p>Likhi</p>
-                    <p>Bunny</p>
-                </div> */}
                 {isopenaccountsbar}
                 </div>
             </div>

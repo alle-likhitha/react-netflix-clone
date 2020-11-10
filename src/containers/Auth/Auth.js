@@ -8,6 +8,7 @@ import Formdata from '../../components/Signin/Formdata';
 import Model from '../../ui/Model/Model';
 import Alldetails from '../../components/Signin/Alldetails';
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 // import {updateObject} from '../../hoc/Shared/Utility';
 
 // import Button from '../../ui/Button/Button';
@@ -37,7 +38,9 @@ class Auth extends Component{
             name:null,
             phone:null,
             dateofbirth:null
-        }
+        },
+        redirect:null,
+        error: null
 
 
     }
@@ -83,14 +86,8 @@ class Auth extends Component{
             name:name,
             phone:phone,
             dateofbirth:dob
-        }})
-        // this.setState({userdata:upstate})
+        }}, this.authPost)
         console.log(this.state.userdata)
-        this.authPost()
-        if(this.state.userdata.dateofbirth){
-            this.authPost()
-        }
-        
     }
     authPost = () =>{
         // if(this.state.userdata.dateofbirth){
@@ -99,14 +96,18 @@ class Auth extends Component{
             console.log(response)
             if (response.data.data){
                     console.log(response)
-                // dispatch(setAuthRedirectPath('/med', email))
-            }else{
-                // dispatch(authFail(response.data.error));
+                    this.setState({redirect:"/"})
+
             }
         })
+        .catch(err =>{
+            console.log(err)
+            this.setState({error:err})
+        })
+    }
+    // AuthRedirect=()=>{
+
     // }
-}
-    
 
     OnQClickHandler = props =>{
         console.log("kasydgjuhsgd",props)
@@ -124,7 +125,13 @@ class Auth extends Component{
     }
     render(){
         console.log(this.state.userdata)
-        
+        if(this.state.redirect){
+            return <Redirect to={this.state.redirect} />
+        }
+        let err = null
+        if(this.state.error){
+        err = <h4>{this.state.err}</h4>
+        }
         let qands = this.state.questions.map(qes =>{
             // console.log(this.state.questions.indexOf(qes))
             let x = this.state.questions.indexOf(qes)
@@ -169,6 +176,7 @@ class Auth extends Component{
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
                 <br />
                 <br />
+                {err}
                 <Formdata onSubmit = {this.submitSignHandler} />
                 <br />
                 <div style={{width:"350px", display:"flex", flexDirection:"row", justifyContent:"space-evenly", margin:"0 auto"}}>

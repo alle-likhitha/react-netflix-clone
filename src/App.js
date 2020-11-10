@@ -13,8 +13,9 @@ function App() {
 
   let routes = (
     <Switch>
-      <Route path='/tvshows' exact component={TvShows} />
-      <Route path='/movies' exact component={Movies} />
+      <Route path='/tvshows' exact component={()=><TvShows cat="Comedy"/>} />
+      <Route path='/mystery' exact component={()=><TvShows cat="Mystery"/>} />
+      <Route path='/sci-fi' exact component={()=><TvShows cat="Sci-Fi"/>} />
       <Route path='/' exact component={NetflixMain} />
       <Route path='/referfriends' exact component={GiftPage} />
       <Route path='/auth' exact component= {Auth} />

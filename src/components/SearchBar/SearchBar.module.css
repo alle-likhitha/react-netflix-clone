@@ -8,6 +8,7 @@
 .SearchBar input{
     height: 25px;
     width: 250px;
+    color: white;
     background-color: transparent;
     display: block;
     border-radius: 10px;

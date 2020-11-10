@@ -36,7 +36,7 @@ class TvShows extends Component{
         
     }
     DataFetchComedy = props =>{
-        axios.get("http://localhost:9000/main/get-by-category")
+        axios.get("http://localhost:9000/main/get-by-category?category="+this.props.cat)
         .then( res =>{
             console.log(res.data)
             console.log(typeof(res))
@@ -65,9 +65,9 @@ class TvShows extends Component{
                 <Model show={this.state.Onclick} modelClosed={this.cancelOrderHandler}>
                     {discription}
                 </Model>
-            <h1 style={{margin:'100px 0 0 0', textAlign:'center', color:'white'}}>TV SHOWS</h1>
-            <MyList type='Tv Shows with Comedy Genre' data = {this.state.data} lala={{height:"1000px"}}  showup={this.OnClickedHandler}></MyList>
-            </div>
+        <h1 style={{margin:'100px 0 0 0', textAlign:'center', color:'white'}}>{this.props.cat}</h1>
+            <MyList type={'Tv Shows with '+this.props.cat +' Genre'} data = {this.state.data} lala={{height:"1000px"}}  showup={this.OnClickedHandler}></MyList>
+            </div> 
             
         );
     }

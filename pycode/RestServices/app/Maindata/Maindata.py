@@ -18,8 +18,9 @@ def get_all():
 
 @mod_data.route("/get-by-category")
 def get_by_category():
+    category = request.args.get("category")
     try:
-        data = list(DButils().get_collection("moviesnow", "tvshows").find({'Genre': {"$regex": ".*Comedy.*"}}))
+        data = list(DButils().get_collection("moviesnow", "tvshows").find({'Genre': {"$regex": ".*"+category+".*"}}))
         for d in data:
             d["_id"] = str(d["_id"])
         return dumps({"data": data}), 200, {"Content Type": "application/json"}

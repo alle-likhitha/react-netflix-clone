@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 from bson.json_util import dumps
+import json
 mod_data = Blueprint('login', __name__,)
 from DButils import DButils
 
@@ -33,10 +34,28 @@ def add_new_user():
 def signup_user():
     print("-=-=-=")
     data_received = request.get_data()
-    print(data_received)
+    record = json.loads(data_received)
+    try:
+        data = DButils().get_collection("moviesnow", "user_data").insert(record)
+        if (data):
+            return dumps({"data": "SUCCESS"}), 200, {"Content Type": "application/json"}
+        else:
+            return dumps({"error": "FAILED TO SET UP INFO"}), 200, {"Content Type": "application/json"}
+    except:
+        return dumps({"error": "USER ALREADY PRESENT"}), 200, {"Content Type": "application/json"}
+    # print(data_received)
 
 
 ## GET CALL -> USER DETAILS VERIFY ?
-
+@mod_data.route("/verify-login")
+def verify_login():
+    user_email = request.args.get("email")
+    password = request.args.get("password")
+    data =DButils().get_collection("moviesnow", "user_data").find_one({"email": user_email,
+                                                                 "password": password})
+    if data:
+        return dumps({"data": "SUCCESS"}), 200, {"Content Type": "application/json"}
+    else:
+        return dumps({"error": "FAILED TO SET UP INFO"}), 200, {"Content Type": "application/json"}
 
 ##
